@@ -10,7 +10,7 @@ public class ProductData {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.println("Digite as informações do produto:");
 		System.out.print("Nome: ");
 		String name = sc.nextLine();
@@ -18,7 +18,7 @@ public class ProductData {
 		double price = sc.nextDouble();
 		System.out.print("Quantidade: ");
 		int quantity = sc.nextInt();
-		
+
 		Product product = new Product(name, price, quantity);
 
 		System.out.println();
