@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import entities.Employee;
 
-public class Employee_Salary {
+public class EmployeeSalary {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);

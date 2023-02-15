@@ -5,24 +5,24 @@ import java.util.Scanner;
 
 import entities.Student;
 
-public class program {
+public class CauculoAluno {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		Student sdt = new Student();
+		
 
 		System.out.println("Qual nome do aluno:");
-		sdt.name = sc.nextLine();
+		Student.name = sc.nextLine();
 		System.out.println("Digite as três notas:");
-		sdt.av1 = sc.nextDouble();
-		sdt.av2 = sc.nextDouble();
-		sdt.av3 = sc.nextDouble();
-		System.out.printf("Nota Final: %.2f%n", sdt.finalGrade());
+		Student.av1 = sc.nextDouble();
+		Student.av2 = sc.nextDouble();
+		Student.av3 = sc.nextDouble();
+		System.out.printf("Nota Final: %.2f%n", Student.finalGrade());
 
-		if (sdt.finalGrade() < 60.0) {
+		if (Student.finalGrade() < 60.0) {
 			System.out.println("Reprovado!");
-			System.out.printf("Faltam %.2f Pontos para recuperar.", sdt.missingPoint());
+			System.out.printf("Faltam %.2f Pontos para recuperar.", Student.missingPoint());
 		}else {
 			System.out.println("Parabéns, você está aprovado!");
 		}

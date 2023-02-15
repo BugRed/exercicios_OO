@@ -2,16 +2,16 @@ package entities;
 
 public class Student {
 
-	public String name;
-	public double av1;
-	public double av2;
-	public double av3;
+	public static String name;
+	public static double av1;
+	public static double av2;
+	public static double av3;
 
-	public double finalGrade() {
+	public static double finalGrade() {
 		return av1 + av2 + av3;
 	}
 
-	public double missingPoint() {
+	public static double missingPoint() {
 		if (finalGrade() < 60.0) {
 			return 60.0 - finalGrade();
 		} else {
