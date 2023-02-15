@@ -16,7 +16,7 @@ public class CalculoGeometrico {
 		rt.width = sc.nextDouble();
 		System.out.println("Enter rectangle height");
 		rt.height = sc.nextDouble();
-		
+
 		System.out.println(rt);
 
 		sc.close();
