@@ -1,48 +1,55 @@
 package entities;
 
 public class Account {
-	private int numberAcc;
-	private double saldo;
-	private String nameAcc;
-	public double deposito;
+	private int number;
+	private double balance;
+	private String holder;
 
 	public Account() {
 	}
 
-	public Account(String nameAcc, int numberAcc, double saldo, double deposito) {
-		this.nameAcc = nameAcc;
-		this.numberAcc = numberAcc;
-		this.saldo = saldo;
-		this.deposito = deposito;
+	public Account(int number, String holder) {
+		this.number = number;
+		this.holder = holder;
+	}
+
+	public Account(String nameAcc, int numberAcc, double inicialDeposit) {
+		this.holder = nameAcc;
+		this.number = numberAcc;
+		deposit(inicialDeposit);
 	}
 
 	public String getNameAcc() {
-		return nameAcc;
+		return holder;
 	}
 
-	public void setNameAcc(String nameAcc) {
-		this.nameAcc = nameAcc;
+	public void setNameAcc(String holder) {
+		this.holder = holder;
 	}
 
 	public int getNumberAcc() {
-		return numberAcc;
+		return number;
 	}
 
 	public double getSaldo() {
-		return saldo;
+		return balance;
 	}
 
-	public double addSaldo(double saldo) {
-		return this.saldo += saldo;
+	public double deposit(double amount) {
+		return this.balance += amount;
 	}
 
-	public double removeSaldo(double saldo) {
-		return this.saldo -= saldo + 5.0;
+	public double withdraw(double amount) {
+		return this.balance -= amount + 5.0;
 	}
 
 	public String toString() {
-		return "Número da conta: " + numberAcc + ", Titular da conta: " + nameAcc + ", Saldo atual: $ "
-				+ String.format("%.2f%n", saldo);
+		return "Número da conta: " 
+           	+ number 
+        	+ ", Titular da conta: " 
+	        + holder 
+	        + ", Saldo atual: $ "	
+        	+ String.format("%.2f%n", balance);
 	}
 
 }
