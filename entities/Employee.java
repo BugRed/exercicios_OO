@@ -2,22 +2,79 @@ package entities;
 
 public class Employee {
 
-	public String name;
-	public double grossSalary;
-	public double tax;
+	private String name;
+	private Integer id;
+	private Double grossSalary;
+	private Double tax;
+	
+	
+	public Employee() {
+		super();
+	}
 
-	public double netSalary() {
+	public Employee(String name, Integer id, Double grossSalary) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.grossSalary = grossSalary;
+	}
+
+	public Employee(String name, Integer id, Double grossSalary, Double tax) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.grossSalary = grossSalary;
+		this.tax = tax;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getTax() {
+		return tax;
+	}
+
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
+
+	public Double getGrossSalary() {
+		return grossSalary;
+	}
+
+	public Double netSalary() {
 		return grossSalary - tax;
 	}
 
-	public void increaseSalary(double percentage) {
+	public void increaseSalary(Double percentage) {
 		grossSalary += grossSalary * percentage/100.0;
 	}
 	
-	public String toString() {
+	public void toDecreaseSalary (Double percentage) {
+		grossSalary -= grossSalary * percentage/100.0;
+	}
+	
+	public String toString2() {
 		return name
 			+ ", $ "
 			+ String.format("%.2f%n", netSalary());
+	}
+	public String toString() {
+		return "id: "
+			+ id
+			+ " Nome: "
+			+ name
+			+ " Salário: "
+			+ String.format("%.3f%n", netSalary());
 	}
 
 }
