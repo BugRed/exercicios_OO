@@ -6,21 +6,18 @@ public class Employee {
 	private Integer id;
 	private Double grossSalary;
 	private Double tax;
-	
-	
+
 	public Employee() {
-		super();
+
 	}
 
 	public Employee(String name, Integer id, Double grossSalary) {
-		super();
 		this.name = name;
 		this.id = id;
 		this.grossSalary = grossSalary;
 	}
 
 	public Employee(String name, Integer id, Double grossSalary, Double tax) {
-		super();
 		this.name = name;
 		this.id = id;
 		this.grossSalary = grossSalary;
@@ -56,25 +53,19 @@ public class Employee {
 	}
 
 	public void increaseSalary(Double percentage) {
-		grossSalary += grossSalary * percentage/100.0;
+		grossSalary += grossSalary * percentage / 100.0;
 	}
-	
-	public void toDecreaseSalary (Double percentage) {
-		grossSalary -= grossSalary * percentage/100.0;
+
+	public void toDecreaseSalary(Double percentage) {
+		grossSalary -= grossSalary * percentage / 100.0;
 	}
-	
+
 	public String toString2() {
-		return name
-			+ ", $ "
-			+ String.format("%.2f%n", netSalary());
+		return name + ", $ " + String.format("%.2f%n", netSalary());
 	}
+
 	public String toString() {
-		return "id: "
-			+ id
-			+ " Nome: "
-			+ name
-			+ " Salário: "
-			+ String.format("%.3f%n", netSalary());
+		return "id: " + id + " Nome: " + name + " Salário: " + String.format("%.3f%n", netSalary());
 	}
 
 }
